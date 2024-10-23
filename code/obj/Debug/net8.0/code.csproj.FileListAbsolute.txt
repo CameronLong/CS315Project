@@ -1,0 +1,15 @@
+/Users/cameronlong/Documents/School/CS315/CS315Project/code/bin/Debug/net8.0/code
+/Users/cameronlong/Documents/School/CS315/CS315Project/code/bin/Debug/net8.0/code.deps.json
+/Users/cameronlong/Documents/School/CS315/CS315Project/code/bin/Debug/net8.0/code.runtimeconfig.json
+/Users/cameronlong/Documents/School/CS315/CS315Project/code/bin/Debug/net8.0/code.dll
+/Users/cameronlong/Documents/School/CS315/CS315Project/code/bin/Debug/net8.0/code.pdb
+/Users/cameronlong/Documents/School/CS315/CS315Project/code/obj/Debug/net8.0/code.GeneratedMSBuildEditorConfig.editorconfig
+/Users/cameronlong/Documents/School/CS315/CS315Project/code/obj/Debug/net8.0/code.AssemblyInfoInputs.cache
+/Users/cameronlong/Documents/School/CS315/CS315Project/code/obj/Debug/net8.0/code.AssemblyInfo.cs
+/Users/cameronlong/Documents/School/CS315/CS315Project/code/obj/Debug/net8.0/code.csproj.CoreCompileInputs.cache
+/Users/cameronlong/Documents/School/CS315/CS315Project/code/obj/Debug/net8.0/code.sourcelink.json
+/Users/cameronlong/Documents/School/CS315/CS315Project/code/obj/Debug/net8.0/code.dll
+/Users/cameronlong/Documents/School/CS315/CS315Project/code/obj/Debug/net8.0/refint/code.dll
+/Users/cameronlong/Documents/School/CS315/CS315Project/code/obj/Debug/net8.0/code.pdb
+/Users/cameronlong/Documents/School/CS315/CS315Project/code/obj/Debug/net8.0/code.genruntimeconfig.cache
+/Users/cameronlong/Documents/School/CS315/CS315Project/code/obj/Debug/net8.0/ref/code.dll
