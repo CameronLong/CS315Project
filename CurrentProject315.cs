@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.ComponentModel.Design;
+using System.Linq;
 using System.Runtime.InteropServices;
 
 public class Program
@@ -7,7 +8,7 @@ public class Program
     public class HashTable
     {
         public TableItem[] items;
-        public int size = 10;
+        public int size = 11;
         public int count;
 
         public HashTable()
@@ -54,15 +55,15 @@ public class Program
         {
             if (type == 1)
             {
-                int tKey = (newKey % size + tries) % size;
+                int tKey = (newKey % 10 + tries) % 10;
                 return tKey;
             }
             else if (type == 2)
             {
-                int temKey = (newKey % size + (tries * tries)) % size;
+                int temKey = (newKey % 10 + (tries * tries)) %10;
                 return temKey;
             }
-            int tempKey = (newKey % size + (tries * (newKey % size))) % size;
+            int tempKey = (int)((newKey/(Math.Pow(10, tries)))) % 10;
             return tempKey;
 
         }
@@ -108,22 +109,40 @@ public class Program
         newHashTable.addTableElement(name, inputtedNumber, type);
     }
 
+
     public static void deleteContact(ref HashTable newHashTable, int type)
     {
         Console.WriteLine("Enter a name to delete from the phonebook: ");
         string deleteName = Console.ReadLine();
-        int deleteKey = newHashTable.hash_function(deleteName[0], 0, type);
 
-        if (newHashTable.items[deleteKey].name == deleteName)
+        int tries = 0;
+        bool contactFound = false;
+
+        while (tries < newHashTable.size)
         {
-            newHashTable.items[deleteKey].name = null;
-            newHashTable.items[deleteKey].phoneNumber = null;
-            newHashTable.items[deleteKey].key = 0;
-            Console.WriteLine("Contact deleted.");
-        }
-        else
-        {
-            Console.WriteLine("Contact not found.");
+            for (int i = 0; i < newHashTable.size; i++)
+            {
+                if (newHashTable.items[i].name != null && newHashTable.items[i].name == deleteName)
+                {
+                    newHashTable.items[i].name = null;
+                    newHashTable.items[i].phoneNumber = null;
+                    newHashTable.items[i].key = 0;
+                    contactFound = true;
+                    Console.WriteLine("Contact deleted.");
+                    break;
+                }
+            }
+
+            if (!contactFound)
+            {
+                Console.WriteLine("Contact not found.");
+                break;  
+            }
+
+            if (contactFound == true)
+            {
+                break;
+            }
         }
     }
 
