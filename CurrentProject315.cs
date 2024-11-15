@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.Design;
 using System.Linq;
 using System.Runtime.InteropServices;
-
+//Main class Program
 public class Program
 {
     public class HashTable
@@ -10,6 +10,8 @@ public class Program
         public TableItem[] items;
         public int size = 11;
         public int count;
+
+        //creates base level hash table to be manipulated later
 
         public HashTable()
         {
@@ -23,6 +25,8 @@ public class Program
 
 
         }
+
+        //addTableElement takes the name and number and inserts it into the hashtable by calling the hash_function
 
         public void addTableElement(string name, string inputtedNumber, int type)
         {
@@ -50,6 +54,8 @@ public class Program
             }
 
         }
+        
+        //Called to probe based off of linear, quadratic or double-hashing (type), returns the correct value location
 
         public int hash_function(int newKey, int tries, int type)
         {
@@ -70,6 +76,8 @@ public class Program
 
     }
 
+    //Basic structure for an item in the table, which contains a key, name and phone number
+
     public struct TableItem
     {
         public string name;
@@ -77,11 +85,17 @@ public class Program
         public int key;
     }
 
+    //Basic function that prompts and reads user entry for a phone number
+
     public static string numberInput()
     {
         Console.Write("Enter Phone Number: ");
         return Console.ReadLine();
     }
+
+    //createContact asks the user for a name and number (latter via numberInput function),
+    //then it checks that the information typed is valid, 
+    //then sends the information to be added to the HashTable via the addTableElement function
 
     public static void createContact(ref HashTable newHashTable, int type)
     {
@@ -109,6 +123,7 @@ public class Program
         newHashTable.addTableElement(name, inputtedNumber, type);
     }
 
+    //Delete contact prompts the user for a name, then "deletes" them by setting their values to 0 or null
 
     public static void deleteContact(ref HashTable newHashTable, int type)
     {
@@ -146,6 +161,9 @@ public class Program
         }
     }
 
+    //ShowContacts iterates through all the values in the hash table, printing them out 
+    //In their respective hashed locations
+
     public static void showContacts(ref HashTable newPhonebook)
     {
         Console.WriteLine("------------Phone Book-----------------");
@@ -162,6 +180,8 @@ public class Program
         }
         Console.WriteLine("---------------------------------------");
     }
+    
+    //Call number searches the hash table for a prompted number and 'calls' it
 
     public static void callNumber(string numberToCall, ref HashTable newPhonebook)
     {
@@ -175,6 +195,8 @@ public class Program
         }
         Console.WriteLine("Number not found in contacts.");
     }
+
+    //usePhone is just an intermediary step between the user asking to call, and callNumber being called
 
     public static void usePhone(ref HashTable phonebook)
     {
